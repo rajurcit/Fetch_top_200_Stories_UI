@@ -13,8 +13,7 @@ export class Common {
             const checkData = window.location.href;
             
             if (error.status=='417' || error.status=='403') {                
-                localStorage.removeItem('userLogedIn');
-                window.location.href = 'login';
+                // error page here
             }
             // Get server-side error
             errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
