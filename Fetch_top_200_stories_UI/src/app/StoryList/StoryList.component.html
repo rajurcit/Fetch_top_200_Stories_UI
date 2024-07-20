@@ -1,0 +1,11 @@
+ 
+<div *ngIf="this.storyList">
+  <h2>{{ this.storyList.title }}</h2>
+  <p><strong>Author:</strong> {{ this.storyList.by }}</p>
+  <p><strong>Score:</strong> {{ this.storyList.score }}</p>
+  <p><strong>Time:</strong> {{ this.storyList.time | date:'medium' }}</p>
+  <p><strong>Type:</strong> {{ this.storyList.type }}</p>
+  <p><strong>URL: </strong> <a [href]="this.storyList.url">{{ this.storyList.url }}</a></p>
+  <p><strong>Descendants:</strong> {{ this.storyList.descendants }}</p>
+  <p><strong>Kids:</strong> {{ this.storyList.kids.join(', ') }}</p>
+</div>
