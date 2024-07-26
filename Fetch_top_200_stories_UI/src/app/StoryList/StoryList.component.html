@@ -1,11 +1,19 @@
- 
-<div *ngIf="this.storyList">
-  <h2>{{ this.storyList.title }}</h2>
-  <p><strong>Author:</strong> {{ this.storyList.by }}</p>
-  <p><strong>Score:</strong> {{ this.storyList.score }}</p>
-  <p><strong>Time:</strong> {{ this.storyList.time | date:'medium' }}</p>
-  <p><strong>Type:</strong> {{ this.storyList.type }}</p>
-  <p><strong>URL: </strong> <a [href]="this.storyList.url">{{ this.storyList.url }}</a></p>
-  <p><strong>Descendants:</strong> {{ this.storyList.descendants }}</p>
-  <p><strong>Kids:</strong> {{ this.storyList.kids.join(', ') }}</p>
+<div style="padding-top: 50px;">
+  <input type="text" placeholder="Search stories..." [(ngModel)]="searchQuery" (input)="filterStories()" />
+  <div *ngIf="filteredStoryList.length; else noStories">
+    <div *ngFor="let story of filteredStoryList">
+      <h2>{{ story.title }}</h2>
+      <p><strong>URL:</strong> <a [href]="story.url">{{ story.url }}</a></p>
+    </div>
+    <div class="pagination">
+      <button (click)="setPage(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+      <span>Page {{ currentPage }} of {{ totalPages }}</span>
+      <button (click)="setPage(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+    </div>
+  </div>
+  <ng-template #noStories>
+    <p>No stories found.</p>
+  </ng-template>
 </div>
+
+ 

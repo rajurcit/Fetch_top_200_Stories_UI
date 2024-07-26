@@ -7,7 +7,7 @@ import { DataSharingService } from 'src/services/DataSharing.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Fetch_top_200_stories_UI app is running!';
+  
   showSidebar: boolean;
   loading: boolean | undefined;
 

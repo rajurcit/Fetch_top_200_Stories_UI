@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { StoryListComponent } from './StoryList/StoryList.component';
 import { StoryService } from 'src/services/story.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
    declarations: [
@@ -15,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
    imports: [
 	 BrowserModule,
 	 AppRoutingModule,
-    HttpClientModule 
+    HttpClientModule ,FormsModule  
 	],
    providers: [StoryService],
    bootstrap: [
