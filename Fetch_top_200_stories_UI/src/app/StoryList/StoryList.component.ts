@@ -22,6 +22,9 @@ export class StoryListComponent implements OnInit {
     this.getStoryList();
   }
 
+
+  ///test
+  
   getStoryList() {
     this._dataSharingService.loaderShow(true);
     this.api.getStoryList().subscribe(
